@@ -14,18 +14,20 @@ if ($runquery->execute() ==1) {
     $runquery = $conn->prepare("delete from products where id=:id");
 $runquery->bindParam(":id", $id,pdo::PARAM_STR);
 $runquery->execute();
-}else {
-   
 }
 if ($runquery->execute()) {
-
+  $session->set("success", "data  delete success" ) ;
+    
     $request->header('../index.php');
 
 }else {
+    $session->set("errors", "data  delete error" );
 }
 
 
 
 }else {
-
+    $session->set("errors", "data  delete id error" );
+    $request->header('../index.php');
+   
 }

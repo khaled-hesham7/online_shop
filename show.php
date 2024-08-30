@@ -14,10 +14,12 @@ if ($request->get('id')) {
         
 
         }else{
+
+            $request->header('../index.php');
         }
 
     }else{
-
+$request->header('index.php');
     }
 ?>
 

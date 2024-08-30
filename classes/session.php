@@ -20,9 +20,9 @@ class Session
     public function get($key)
     {
         if (isset($_SESSION[$key])) {
-            echo $_SESSION[$key];
+           return $_SESSION[$key];
         } else {
-            echo "not found";
+            // return "not found";
         }
     }
 

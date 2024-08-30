@@ -36,6 +36,11 @@ if ($request->get('id')) {
 
   $runquery->fetch(PDO::FETCH_ASSOC);
 
+
+  move_uploaded_file($imagetmpname, "../images/$newname");
+
+  $session->set("success", "data  UPDATE success" ) ;
+
   $request->header('../index.php');
 
 

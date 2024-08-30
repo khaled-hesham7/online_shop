@@ -39,10 +39,15 @@
         if ($runquery->execute()) {
 
             move_uploaded_file($imagetmpname, "../images/$newname");
-
-
+            $session->set("success", "data  insert success" ) ;
             $request->header('../index.php');
+        }else{
+            $session->set("errors", "data not found" );
+            
         }
+
     } else {
+    $session->set("errors", "data add submit error" );
+
         $request->header('../index.php');
     }
